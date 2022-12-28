@@ -1,0 +1,25 @@
+{
+  "name": "Learn CRX",
+  "description": "Chrome Extension for Wikipedia",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": ["storage", "activeTab", "scripting"],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://en.wikipedia.org/*",
+        "https://en.wikidata.org/*"
+      ],
+      "js": ["jquery-3.6.3.js", "inject.js"],
+      "css": [
+        "index.css"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [ "vite.svg", "vue.svg", "index.js" ],
+      "matches": [ "https://en.wikipedia.org/*" ]
+    }
+  ]
+}
